@@ -1,0 +1,36 @@
+<h1>INDEX ARTICLE</h1>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 {
+    width: 100%;    
+    background-color: #f1f1c1;
+}
+</style>
+<table style="width:100%">
+<tr>
+<th>Name</th>
+<th>Age</th>
+<th>Email</th>
+<th>Resume</th>
+</tr>
+<% @articles.each do |article| %>
+ <tr>
+ <td><%= article.name %></td>
+ <td><%= article.age %></td>
+ <td><%= article.email %></td>
+ <td><%= article.resume %></td>
+ <td><%= link_to 'show', article_path(article) %></td>
+ <td><%= link_to 'edit', edit_article_path(article) %></td>
+ <td><%= link_to 'destroy', article_path(article),
+         :method => :delete, data: { clear: 'Are you sure?' } %></td>
+ </tr>
+ <% end %>
+ </table>
+ <%= link_to 'New article', new_article_path %>

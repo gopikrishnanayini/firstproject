@@ -1,0 +1,21 @@
+<% if flash[:notice] %>
+ <div id='notice'><%= flash[:notice] %></div>
+<% end %>
+<p>
+<strong>Name</strong>
+<%= @article.name %>
+</p>
+<p>
+<strong>Age</strong>
+<%= @article.age %>
+</p>
+<p>
+<strong>Email</strong>
+<%= @article.email %>
+</p>
+<p>
+<strong>Resume</strong>
+<%= @article.resume %>
+</p>
+
+<%= link_to 'Back', articles_path %>
